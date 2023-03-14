@@ -37,6 +37,7 @@ func (m *M3U) AddPrefixToPath(prefix string) {
 		switch d := m.dirs[i].(type) {
 		case parser.EXTINF:
 			d.Path = prefix + d.Path
+			m.dirs[i] = d
 		}
 	}
 }
